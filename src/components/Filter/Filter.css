@@ -1,0 +1,14 @@
+.form {
+    margin: 0 auto;
+    padding: 5vw 1.5vw 0;
+    font-weight: bold;
+}
+@media (min-width: 10vw) {
+    .form {
+        max-width: 60%;
+    }
+}
+
+.input-range {
+margin-bottom: 6vw;
+}

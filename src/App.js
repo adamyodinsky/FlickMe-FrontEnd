@@ -6,14 +6,19 @@ import Movie from './components/Movie/Movie';
 import Filter from './components/Filter/Filter';
 import {default as configs} from './config/config';
 import axios from 'axios';
+// import InputRange from 'react-input-range';
+
 
 class App extends Component {
+
+
   state = {
-    showMovies : false
+    showMovies : false,
+    value: { min: 2000, max: 2019 }
   };
 
   getMovie = async () => {
-    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?start=2009&end=2019`;
+    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?start=${this.state.value.min}&end=${this.state.value.max}`;
 
     try {
       const response = await axios.get(url);
@@ -41,12 +46,15 @@ class App extends Component {
 
     return (
         <div className='App'>
-        <Header/>
-        <MochooButton click={() => {this.getMovie()}} />
-    {movies}
-  <Filter/>
-    <footer/>
-    </div>
+          <Header/>
+          <MochooButton click={() => {this.getMovie()}} />
+          <Filter
+              value={this.state.value}
+              change={value => this.setState({ value })}
+          />
+          {movies}
+          <footer/>
+        </div>
   )
   }
 }
