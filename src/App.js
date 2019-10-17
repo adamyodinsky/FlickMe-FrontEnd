@@ -3,10 +3,10 @@ import './App.css';
 import MochooButton from './components/MochooButton/MochooBotton';
 import Header from './components/Header/Header';
 import Movie from './components/Movie/Movie';
-import Filter from './components/Filter/Filter';
+import YearFilter from './components/Filters/yearFilter';
+import ToggleFiltersButton from './components/toggleFiltersButton/toggleFiltersButton';
 import {default as configs} from './config/config';
 import axios from 'axios';
-// import InputRange from 'react-input-range';
 
 
 class App extends Component {
@@ -14,7 +14,14 @@ class App extends Component {
 
   state = {
     showMovies : false,
+    showFilters: false,
     value: { min: 2000, max: 2019 }
+  };
+
+  toggleFilters = () => {
+    this.setState({
+      showFilters: !this.state.showFilters
+        })
   };
 
   getMovie = async () => {
@@ -35,23 +42,31 @@ class App extends Component {
 
   render() {
     let movies = null;
+    let filters = null;
 
     if (this.state.showMovies) {
       movies = (
           <div>
           <Movie  movie={this.state.movie} />
       </div>
-    )
+      )
+    }
+
+    if(this.state.showFilters) {
+      filters = (
+          <YearFilter
+              value={this.state.value}
+              change={value => this.setState({ value })}
+          />
+      )
     }
 
     return (
         <div className='App'>
           <Header/>
           <MochooButton click={() => {this.getMovie()}} />
-          <Filter
-              value={this.state.value}
-              change={value => this.setState({ value })}
-          />
+          <ToggleFiltersButton click={this.toggleFilters}/>
+          {filters}
           {movies}
           <footer/>
         </div>
