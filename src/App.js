@@ -22,7 +22,6 @@ class App extends Component {
   state = {
     showMovies : false,
     showFilters: false,
-    value: { min: 2000, max: 2019 }
   };
 
   toggleFilters = () => {
@@ -63,12 +62,12 @@ class App extends Component {
       filters = (
           <div style={wrapperStyle}>
             <Range
-                click={() => }
+                change={()=> {}}
                 min={1920}
                 max={2019}
                 defaultValue={[1999, 2019]}
                 tipFormatter={value => `${value}`}
-                allowCross={false}
+                pushable={0}
             />
           </div>
       )

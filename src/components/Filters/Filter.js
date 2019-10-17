@@ -14,6 +14,7 @@ const Filter = (props) => {
                  visible={dragging}
                  placement="top"
                  key={index}
+                 onChange
         >
           <Handle value={value} {...restProps} />
         </Tooltip>
