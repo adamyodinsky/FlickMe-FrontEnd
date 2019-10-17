@@ -3,10 +3,17 @@ import './App.css';
 import MochooButton from './components/MochooButton/MochooBotton';
 import Header from './components/Header/Header';
 import Movie from './components/Movie/Movie';
-import YearFilter from './components/Filters/yearFilter';
+// import YearFilter from './components/Filters/yearFilter';
+import Filter from './components/Filters/Filter'
 import ToggleFiltersButton from './components/toggleFiltersButton/toggleFiltersButton';
 import {default as configs} from './config/config';
 import axios from 'axios';
+import Slider from 'rc-slider';
+
+
+const createSliderWithTooltip = Slider.createSliderWithTooltip;
+const Range = createSliderWithTooltip(Slider.Range);
+const wrapperStyle = { width: 400, margin: 50 };
 
 
 class App extends Component {
@@ -47,17 +54,16 @@ class App extends Component {
     if (this.state.showMovies) {
       movies = (
           <div>
-          <Movie  movie={this.state.movie} />
-      </div>
+            <Movie  movie={this.state.movie} />
+         </div>
       )
     }
 
     if(this.state.showFilters) {
       filters = (
-          <YearFilter
-              value={this.state.value}
-              change={value => this.setState({ value })}
-          />
+          <div style={wrapperStyle}>
+            <Range min={1920} max={2019} defaultValue={[1999, 2019]} tipFormatter={value => `${value}`} />
+          </div>
       )
     }
 
