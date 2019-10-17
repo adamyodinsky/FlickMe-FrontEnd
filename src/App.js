@@ -50,11 +50,12 @@ class App extends Component {
       )
     }
 
+
     if(this.state.showFilters) {
       filters = (
-          <div style={ {fontSize: '1.5vw'} }>
-            <p>Year</p>
+          <div>
             <Filter
+                title='Year'
                 defaultMin={this.state.yearValue[0]}
                 defaultMax={this.state.yearValue[1]}
                 value={this.state.yearValue}
@@ -63,8 +64,8 @@ class App extends Component {
                 marks={Marks.year}
                 onChange={(value) => {this.setState({ yearValue: value})}}
             />
-            <p>Quality</p>
             <Filter
+                title='Quality'
                 defaultMin={this.state.qualityValue[0]}
                 defaultMax={this.state.qualityValue[1]}
                 value={this.state.qualityValue}

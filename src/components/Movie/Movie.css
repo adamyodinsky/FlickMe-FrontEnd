@@ -1,24 +1,27 @@
 .Movie {
-    align-content: normal;
     font-family: Futura;
 }
 
-h2 {
+.h2 {
+    /* align-content: normal; */
     font-size: 3vw;
     font-weight: bold;
 }
 
-h3 {
-    font-size: 25px;
-    font-family: Futura;
+.h3 {
+    /* align-content: normal; */
+    font-size: 2vw;
     font-weight: bold;
 }
 
-span {
+.span {
+    
     font-size: 20px;
-}
+    font-weight: bold;
+} 
 
-article {
+.article {
+    /* align-content: normal; */
     font-size: 20px;
     padding-left: 15vw;
     padding-right: 15vw;
