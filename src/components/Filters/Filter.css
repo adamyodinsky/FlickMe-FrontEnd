@@ -1,15 +1,18 @@
-/*.form {*/
-/*    margin:  auto;*/
-/*    padding: 1vw 1.5vw 0;*/
-/*    font-weight: bold;*/
-/*}*/
+.form {
+    margin:  auto;
+    padding: 1vw 1vw 0;
+    font-size: small;
+    /*font-weight: bold;*/
+}
 
-/*@media (min-width: 10vw) {*/
-/*    .form {*/
-/*        max-width: 60%;*/
-/*    }*/
-/*}*/
+@media (min-width: 10vw) {
+    .form {
+        max-width: 60%;
+        font-size: small;
+    }
+}
 
-/*.input-range {*/
-/*margin-bottom: 6vw;*/
-/*}*/
+.input-range {
+    margin-bottom: 6vw;
+    font-size: small;
+}

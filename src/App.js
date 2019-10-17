@@ -3,25 +3,19 @@ import './App.css';
 import MochooButton from './components/MochooButton/MochooBotton';
 import Header from './components/Header/Header';
 import Movie from './components/Movie/Movie';
-// import YearFilter from './components/Filters/yearFilter';
 import Filter from './components/Filters/Filter'
 import ToggleFiltersButton from './components/toggleFiltersButton/toggleFiltersButton';
 import {default as configs} from './config/config';
 import axios from 'axios';
-import Slider from 'rc-slider';
-
-
-const createSliderWithTooltip = Slider.createSliderWithTooltip;
-const Range = createSliderWithTooltip(Slider.Range);
-const wrapperStyle = { width: 400, margin: 50 };
-
+import Marks from './components/Filters/marks';
 
 class App extends Component {
-
 
   state = {
     showMovies : false,
     showFilters: false,
+    yearValue: [1999, 2019],
+    qualityValue: [0, 100]
   };
 
   toggleFilters = () => {
@@ -31,11 +25,9 @@ class App extends Component {
   };
 
   getMovie = async () => {
-    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?start=${this.state.value.min}&end=${this.state.value.max}`;
-
+    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?start=${this.state.yearValue[0]}&end=${this.state.yearValue[1]}`;
     try {
       const response = await axios.get(url);
-      console.log(response.data);
       this.setState({
         movie :response.data,
         showMovies: true
@@ -60,14 +52,27 @@ class App extends Component {
 
     if(this.state.showFilters) {
       filters = (
-          <div style={wrapperStyle}>
-            <Range
-                change={()=> {}}
+          <div>
+            <p>Year</p>
+            <Filter
+                defaultMin={this.state.yearValue[0]}
+                defaultMax={this.state.yearValue[1]}
+                value={this.state.yearValue}
                 min={1920}
                 max={2019}
-                defaultValue={[1999, 2019]}
-                tipFormatter={value => `${value}`}
-                pushable={0}
+                marks={Marks.year}
+                onChange={(value) => {this.setState({ yearValue: value})}}
+            />
+            <p>Quality</p>
+            <Filter
+                defaultMin={this.state.qualityValue[0]}
+                defaultMax={this.state.qualityValue[1]}
+                value={this.state.qualityValue}
+                min={0}
+                max={100}
+                onChange={(value) => {this.setState({ qualityValue : value})}}
+                marks={Marks.quality}
+                step={25}
             />
           </div>
       )

@@ -1,25 +1,27 @@
 import React from 'react';
-import Tooltip from 'rc-tooltip';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import './Filter.css'
 
-const Handle = Slider.Handle;
+const createSliderWithTooltip = Slider.createSliderWithTooltip;
+const Range = createSliderWithTooltip(Slider.Range);
+
 
 const Filter = (props) => {
-  const { click, value, dragging, index, ...restProps } = props;
+  const { onChange, defaultMin, defaultMax, min, max, marks, step} = props;
   return (
-        <Tooltip className='form input-range'
-                 prefixCls="rc-slider-tooltip"
-                 overlay={value}
-                 visible={dragging}
-                 placement="top"
-                 key={index}
-                 onChange
-        >
-          <Handle value={value} {...restProps} />
-        </Tooltip>
-  );
+      <div className='form'>
+        <Range
+            min={min}
+            max={max}
+            defaultValue={[defaultMin, defaultMax]}
+            pushable={0}
+            onChange={onChange}
+            marks={marks}
+            step={step}
+        />
+      </div>
+  )
 };
-
 
 export default Filter;

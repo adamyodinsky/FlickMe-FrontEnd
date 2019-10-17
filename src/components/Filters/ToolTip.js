@@ -1,0 +1,22 @@
+import React from 'react';
+import Tooltip from 'rc-tooltip';
+import Slider from 'rc-slider';
+
+const Handle = Slider.Handle;
+
+const ToolTip = (props) => {
+  const { value, dragging, index, ...restProps } = props;
+  return (
+      <Tooltip className='form'
+               prefixCls="rc-slider-tooltip"
+               overlay={value}
+               visible={dragging}
+               placement="top"
+               key={index}
+      >
+        <Handle value={value} {...restProps} />
+      </Tooltip>
+  );
+};
+
+export default ToolTip;
