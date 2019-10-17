@@ -1,14 +1,15 @@
-.form {
-    margin:  auto;
-    padding: 1vw 1.5vw 0;
-    font-weight: bold;
-}
-@media (min-width: 10vw) {
-    .form {
-        max-width: 60%;
-    }
-}
+/*.form {*/
+/*    margin:  auto;*/
+/*    padding: 1vw 1.5vw 0;*/
+/*    font-weight: bold;*/
+/*}*/
 
-.input-range {
-margin-bottom: 6vw;
-}
+/*@media (min-width: 10vw) {*/
+/*    .form {*/
+/*        max-width: 60%;*/
+/*    }*/
+/*}*/
+
+/*.input-range {*/
+/*margin-bottom: 6vw;*/
+/*}*/

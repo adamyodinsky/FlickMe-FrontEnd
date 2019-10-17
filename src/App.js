@@ -62,7 +62,14 @@ class App extends Component {
     if(this.state.showFilters) {
       filters = (
           <div style={wrapperStyle}>
-            <Range min={1920} max={2019} defaultValue={[1999, 2019]} tipFormatter={value => `${value}`} />
+            <Range
+                click={() => }
+                min={1920}
+                max={2019}
+                defaultValue={[1999, 2019]}
+                tipFormatter={value => `${value}`}
+                allowCross={false}
+            />
           </div>
       )
     }
