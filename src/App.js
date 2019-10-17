@@ -3,6 +3,7 @@ import './App.css';
 import MochooButton from './components/MochooButton/MochooBotton';
 import Header from './components/Header/Header';
 import Movie from './components/Movie/Movie';
+import ToolTipFilter from './components/Filters/ToolTipFilter'
 import Filter from './components/Filters/Filter'
 import ToggleFiltersButton from './components/toggleFiltersButton/toggleFiltersButton';
 import {default as configs} from './config/config';
@@ -54,7 +55,7 @@ class App extends Component {
     if(this.state.showFilters) {
       filters = (
           <div>
-            <Filter
+            <ToolTipFilter
                 title='Year'
                 defaultMin={this.state.yearValue[0]}
                 defaultMax={this.state.yearValue[1]}

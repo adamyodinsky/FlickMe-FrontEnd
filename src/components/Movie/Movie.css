@@ -3,25 +3,23 @@
 }
 
 .h2 {
-    /* align-content: normal; */
+    padding-top: 5vw;
     font-size: 3vw;
     font-weight: bold;
 }
 
 .h3 {
-    /* align-content: normal; */
     font-size: 2vw;
     font-weight: bold;
 }
 
 .span {
-    
+
     font-size: 20px;
     font-weight: bold;
 } 
 
 .article {
-    /* align-content: normal; */
     font-size: 20px;
     padding-left: 15vw;
     padding-right: 15vw;
