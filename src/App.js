@@ -26,9 +26,15 @@ class App extends Component {
   };
 
   getMovie = async () => {
-    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?start=${this.state.yearValue[0]}&end=${this.state.yearValue[1]}`;
+    let fromQuality = 100 - this.state.qualityValue[1];
+    let toQuality = 100 - this.state.qualityValue[0];
+
+    console.log(fromQuality +" "+toQuality );
+    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?from_year=${this.state.yearValue[0]}&to_year=${this.state.yearValue[1]}&from_quality=${fromQuality}&to_quality=${toQuality}`;
     try {
       const response = await axios.get(url);
+      // TODO remove this when in prod
+      console.log(response.data);
       this.setState({
         movie :response.data,
         showMovies: true
@@ -74,7 +80,6 @@ class App extends Component {
                 max={100}
                 onChange={(value) => {this.setState({ qualityValue : value})}}
                 marks={Marks.quality}
-                step={25}
             />
           </div>
       )
@@ -82,7 +87,7 @@ class App extends Component {
 
     return (
         <div className='App'>
-          <Header/>
+          {/* <Header/> */}
           <MochooButton click={() => {this.getMovie()}} />
           <ToggleFiltersButton click={this.toggleFilters}/>
           {filters}

@@ -3,7 +3,6 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './Filter.css'
 
-const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = Slider.Range;
 
 
@@ -16,7 +15,7 @@ const Filter = (props) => {
             min={min}
             max={max}
             defaultValue={[defaultMin, defaultMax]}
-            pushable={0}
+            pushable={25}
             onChange={onChange}
             marks={marks}
             step={step}

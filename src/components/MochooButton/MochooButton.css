@@ -1,4 +1,8 @@
 
+.section {
+    padding-top: 6vw;
+}
+
 .glow-on-hover {
     width: 25vw;
     height: 10vw;

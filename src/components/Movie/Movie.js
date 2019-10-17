@@ -12,6 +12,17 @@ const DetailsHelper = (propArr, str) => {
 };
 
 const Movie = (props) => {
+  
+  if (!props.movie) {
+    return (
+    <div className='Movie'>
+        <h2 className='h2'>
+          Can't find a suitable movie,<br/>Broaden your horizons. 
+        </h2>
+    </div>
+      );
+  }
+
   let movie = props.movie;
 
   let Geners = DetailsHelper(movie.genres, 'Genre');

@@ -1,12 +1,6 @@
-// import Filter from './Filter';
-
-const MarkStyle = {
-  fontSize: '1px'
-}
-
 const Marks = {
   quality: {
-      0   : {style: MarkStyle, label: 'Ok'},
+      0   : 'Ok',
       25  : 'Good',
       50  : 'Excellent',
       75  : 'Awesome',

@@ -3,7 +3,7 @@ import './ToggleFiltersButton.css';
 
 const ToggleFiltersButton = (props) => {
   return (
-  <div >
+  <div className='div'>
     <button className='myButton' onClick={props.click} >On/Off Filters</button>
   </div>
   )
