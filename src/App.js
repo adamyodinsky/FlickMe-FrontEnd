@@ -14,7 +14,7 @@ class App extends Component {
   state = {
     showMovies : false,
     showFilters: false,
-    yearValue: [1999, 2019],
+    yearValue: [2000, 2019],
     qualityValue: [0, 100]
   };
 
@@ -52,7 +52,7 @@ class App extends Component {
 
     if(this.state.showFilters) {
       filters = (
-          <div>
+          <div style={ {fontSize: '1.5vw'} }>
             <p>Year</p>
             <Filter
                 defaultMin={this.state.yearValue[0]}
