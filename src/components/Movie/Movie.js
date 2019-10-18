@@ -12,6 +12,17 @@ const DetailsHelper = (propArr, str) => {
 };
 
 const Movie = (props) => {
+  
+  if (!props.movie) {
+    return (
+    <div className='Movie'>
+        <h2 className='h2'>
+          Can't find a suitable movie,<br/>Broaden your horizons. 
+        </h2>
+    </div>
+      );
+  }
+
   let movie = props.movie;
 
   let Geners = DetailsHelper(movie.genres, 'Genre');
@@ -20,18 +31,18 @@ const Movie = (props) => {
 
   return (
       <div className='Movie'>
-        <h2>
+        <h2 className='h2'>
           {movie.fullName}
         </h2>
-        <span>
+        <span className='span'>
           <p>{Geners}</p>
           <p>{Writers}</p>
           <p>{Length}</p>
         </span>
-        <h3>
+        <h3 className='h3'>
           Synopsis:
         </h3>
-        <article>
+        <article className='article'>
           {movie.synopsis}
         </article>
       </div>
