@@ -35,6 +35,7 @@ class App extends Component {
       const response = await axios.get(url);
       // TODO remove this when in prod
       console.log(response.data);
+      console.log(url);
       this.setState({
         movie :response.data,
         showMovies: true
