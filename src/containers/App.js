@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
-import MochooButton from './components/MochooButton/MochooBotton';
-import Header from './components/Header/Header';
-import Movie from './components/Movie/Movie';
-import ToolTipFilter from './components/Filters/ToolTipFilter'
-import Filter from './components/Filters/Filter'
-import ToggleFiltersButton from './components/toggleFiltersButton/toggleFiltersButton';
-import {default as configs} from './config/config';
+import MochooButton from '../components/MochooButton/MochooBotton';
+// import Header from './components/Header/Header';
+import Movie from '../components/Movie/Movie';
+import ToolTipFilter from '../components/Filters/ToolTipFilter'
+import Filter from '../components/Filters/Filter'
+import ToggleFiltersButton from '../components/toggleFiltersButton/toggleFiltersButton';
+import {default as configs} from '../config/config';
 import axios from 'axios';
-import Marks from './components/Filters/marks';
+import Marks from '../components/Filters/marks';
 
 class App extends Component {
 
