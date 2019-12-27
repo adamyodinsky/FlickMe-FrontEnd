@@ -9,10 +9,10 @@ const Header = () => {
         <header className="header">
           <div className="logo-icon-box">
             <div className="logo">
-              <Logo className="shadow" />
+              <Logo />
             </div>
             <div className="icon">
-              <Icon className="shadow" />
+              <Icon />
             </div>
           </div>
         </header>
