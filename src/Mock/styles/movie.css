@@ -41,17 +41,12 @@ body {
     height: 10rem;
 }
 
-/*.trailer {*/
-/*    padding: 1rem;*/
-/*    margin: 2rem;*/
-/*    height: 50%;*/
-/*    text-align: center;*/
-/*    position: relative;*/
-/*}*/
 
-.trailer-box {
-
+.header__title--shadow {
+    -webkit-filter: drop-shadow(0 1.2rem 0.5rem rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 1.2rem 0.5rem rgba(0, 0, 0, 0.2));
 }
+
 
 .trailer {
     position: relative;
@@ -103,9 +98,17 @@ body {
     right: 30rem;
 }
 
-.shadow {
+
+.btn__shadow {
     -webkit-filter: drop-shadow(0 1.2rem 0.5rem rgba(0, 0, 0, 0.2));
-    /*filter: drop-shadow(0 0.7rem 0.7rem rgba(0, 0, 0, 0.2));*/
+    filter: drop-shadow(0 1.2rem 0.5rem rgba(0, 0, 0, 0.2));
+    transition: all 0.2s;
+}
+
+.btn__shadow:hover {
+    -webkit-filter: drop-shadow(0 1.4rem 0.5rem rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 1.4rem 0.5rem rgba(0, 0, 0, 0.2));
+    transition: all 0.2s;
 }
 
 @keyframes opacity {
