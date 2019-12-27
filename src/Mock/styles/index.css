@@ -48,30 +48,39 @@ body {
     text-align: center;
     padding: 3rem;
     margin: 3rem;
-    animation: moveInBottom 1s ease-out;
+    animation: moveInBottom 1.5s ease-out;
 }
 
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes moveInBottom {
     0% {
-        opacity: 0%;
+        opacity: 0;
         transform: translateY(6.5rem);
     }
 
     100% {
-        opacity: 100%;
+        opacity: 1;
         transform: translateY(0rem);
     }
 }
 
 @keyframes moveInTop {
     0% {
-        opacity: 0%;
+        opacity: 0;
         transform: translateY(-6.5rem);
     }
 
     100% {
-        opacity: 100%;
+        opacity: 1;
         transform: translateY(0rem);
     }
 }
