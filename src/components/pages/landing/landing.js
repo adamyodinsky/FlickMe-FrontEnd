@@ -5,10 +5,8 @@ import Header from './header';
 const Landing = () => {
   return(
       <div>
-        <body>
           <Background/>
           <Header/>
-        </body>
       </div>
   );
 };
