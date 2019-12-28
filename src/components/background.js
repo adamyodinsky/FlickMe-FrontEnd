@@ -1,5 +1,5 @@
 import React from 'react';
-import './landing.css'
+import './pages/landing/landing.css'
 
 const Background = () => {
   return (
