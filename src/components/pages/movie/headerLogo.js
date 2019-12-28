@@ -1,11 +1,11 @@
 import React from 'react';
-import Background from './background';
+import Title from '../../../assets/title.svg'
 
-const Header = () => {
+const HeaderLogo = () => {
   return(
       <header className="header">
         <img
-            src="resources/title.svg"
+            src={Title}
             className="header__title shadow"
             alt="title"
         />
@@ -13,4 +13,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderLogo;

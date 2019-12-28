@@ -1,16 +1,18 @@
 import React from 'react';
-import Background from './background';
+import HeaderLogo from './headerLogo';
+import './movie.css'
+import Trailer from './trailer';
+import MovieTitle from './movieTitle';
+import BtnBox from './BtnBox';
 
 const Movie = () => {
   return(
-      <div>
-        <Background/>
         <div className="main">
-          {/* header */}
-          {/*trailer*/} {/*movie title*/}
-          {/* btn box*/}
+          <HeaderLogo/>
+          <Trailer/>
+          <MovieTitle/>
+          <BtnBox/>
         </div>
-      </div>
   );
 };
 
