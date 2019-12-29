@@ -1,10 +1,10 @@
 import React from "react";
-import './landing.css'
+import icon from './icon.module.css'
 
 
 const Icon = () => {
   return (
-    <svg className='btn__svg btn__shadow'
+    <svg className={icon.btn__svg + icon.btn__shadow}
       xmlns="http://www.w3.org/2000/svg"
       width="120"
       height="169"

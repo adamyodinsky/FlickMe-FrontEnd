@@ -1,9 +1,9 @@
 import React from "react";
-import "./movie.css";
+import trailer from './trailer.module.css';
 
 const Trailer = () => {
   return (
-    <div className="trailer shadow">
+    <div className={trailer.trailer + trailer.shadow}>
       <iframe
         title="trailer"
         height="100%"

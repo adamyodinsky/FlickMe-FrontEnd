@@ -1,9 +1,9 @@
 import React from 'react';
-import './pages/landing/landing.css'
+import background from './background.module.css'
 
 const Background = () => {
   return (
-      <div className='background' />
+      <div className={background.background} />
   )
 };
 

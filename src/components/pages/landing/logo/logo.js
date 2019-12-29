@@ -1,8 +1,9 @@
 import React from "react";
-import './landing.css'
+import logo from './logo.module.css';
+
 const Logo = () => {
   return (
-    <svg className='shadow'
+    <svg className={logo.shadow}
       xmlns="http://www.w3.org/2000/svg"
       width="600"
       height="200"

@@ -1,9 +1,9 @@
 import React from 'react';
-import './movie.css'
+import movieTitle from './movieTitle.module.css'
 
 const MovieTitle = () => {
   return (
-      <div className="movie_title shadow">
+      <div className={movieTitle.movie_title + movieTitle.shadow}>
         <h1>The Movie Logo 2019</h1>
       </div>
   )
