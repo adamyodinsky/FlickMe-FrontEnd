@@ -5,6 +5,7 @@ const Trailer = () => {
   return (
     <div className="trailer shadow">
       <iframe
+        title="trailer"
         height="100%"
         width="60%"
         src="https://www.youtube.com/embed/XwRg3mhIbkw"
