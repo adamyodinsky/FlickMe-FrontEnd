@@ -1,0 +1,59 @@
+.main {
+    position: relative;
+    height: 100vh;
+    z-index: 2;
+    overflow: auto;
+}
+
+
+.header {
+    position: relative;
+}
+
+
+.logo_icon_box {
+    padding: 1rem;
+    margin: 1rem;
+
+}
+
+
+.logo {
+    text-align: center;
+    padding: 3rem;
+    margin: 3rem;
+    animation: moveInTop 2s ease-out;
+}
+
+.icon {
+    text-align: center;
+    padding: 3rem;
+    margin: 3rem;
+    animation: moveInBottom 1.5s ease-out;
+}
+
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(6.5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-6.5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
