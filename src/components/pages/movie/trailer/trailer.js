@@ -3,7 +3,7 @@ import trailer from './trailer.module.css';
 
 const Trailer = () => {
   return (
-    <div className={trailer.trailer + trailer.shadow}>
+    <div className={trailer.trailer + ' ' + trailer.shadow}>
       <iframe
         title="trailer"
         height="100%"

@@ -11,7 +11,7 @@ const BtnBox = ()=> {
           <a href="#1">
             <img
                 src={Share}
-                className={btnBox.btn__svg + btnBox.btn__share + btnBox.btn__shadow}
+                className={btnBox.btn__svg + ' ' + btnBox.btn__share + ' ' + btnBox.btn__shadow}
                 alt="share"
             />
           </a>
@@ -20,7 +20,7 @@ const BtnBox = ()=> {
           <a href="#2">
             <img
                 src={Flick}
-                className={btnBox.btn__svg + btnBox.btn__flick + btnBox.btn__shadow}
+                className={btnBox.btn__svg + ' ' + btnBox.btn__flick + ' ' + btnBox.btn__shadow}
                 alt="flick-me"
             />
           </a>
@@ -29,7 +29,7 @@ const BtnBox = ()=> {
           <a href="#3">
             <img
                 src={Like}
-                className={btnBox.btn__svg + btnBox.btn__like + btnBox.btn__shadow}
+                className={btnBox.btn__svg + ' ' + btnBox.btn__like + ' ' + btnBox.btn__shadow}
                 alt="like"
             />
           </a>

@@ -1,12 +1,9 @@
 import React from "react";
 import icon from './icon.module.css'
-import classnames from 'classnames'
-
-// const conditionalClassname = classnames({ styles.A, styles.B, { styleC: Adam === 1, Style.D: Adam === 1}})
 
 const Icon = () => {
   return (
-    <svg className={classnames(icon.btn__svg, icon.btn__shadow)}
+    <svg className={icon.btn__svg + ' ' + icon.btn__shadow}
       xmlns="http://www.w3.org/2000/svg"
       width="120"
       height="169"

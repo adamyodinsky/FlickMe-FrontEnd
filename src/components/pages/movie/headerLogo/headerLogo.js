@@ -7,7 +7,7 @@ const HeaderLogo = () => {
       <header className={headerLogo.header}>
         <img
             src={Title}
-            className={headerLogo.header__title + headerLogo.shadow}
+            className={headerLogo.header__title + ' ' + headerLogo.shadow}
             alt="title"
         />
       </header>
