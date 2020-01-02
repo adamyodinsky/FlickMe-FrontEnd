@@ -1,9 +1,9 @@
 import React from "react";
 import icon from './icon.module.css'
 
-const Icon = (props) => {
+const Icon = () => {
   return (
-    <svg className={icon.btn__svg + ' ' + icon.btn__shadow} onClick={() => props.getMovie()}
+    <svg className={icon.btn__svg + ' ' + icon.btn__shadow}
       xmlns="http://www.w3.org/2000/svg"
       width="120"
       height="169"

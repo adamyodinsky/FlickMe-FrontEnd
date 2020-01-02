@@ -11,27 +11,27 @@ import axios from 'axios';
 class App extends React.Component {
 
   state = {
-    movie: {
-      fullName: 'lalalalala'
-    }
+    movie: 'init',
+    firstTimer: true
   };
 
+
   getMovie = async () => {
-    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie`;
+    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?from_year=1999&to_year=2019&from_quality=1&to_quality=100`;
     try {
       const response = await axios.get(url);
-      // TODO remove this when in prod
-      console.log(response.data);
-      console.log(url);
-
       this.setState({
         movie :response.data,
       });
-
     } catch (e) {
-      console.log(e.message);
+      console.log('ERROR: could not get object');
     }
   };
+
+  componentDidMount() {
+      this.getMovie();
+  }
+
 
   render() {
     return (
@@ -39,7 +39,7 @@ class App extends React.Component {
           <Background/>
           <Router>
             <Switch>
-              <Route exact path="/" render={(props) => (<Landing {...props} getMovie={this.getMovie} />)}/>
+              <Route exact path="/" component={Landing} />
               <Route exact path="/movie" render={(props) => (<Movie {...props} getMovie={this.getMovie} movie={this.state.movie} />)
               }/>
               <Route component={NoMatch} />

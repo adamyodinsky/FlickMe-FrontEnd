@@ -3,7 +3,7 @@ import header from './header.module.css';
 import Logo from '../logo/logo';
 import Icon from '../icon/icon';
 
-const Header = (props) => {
+const Header = () => {
   return (
     <div className={header.main}>
       <header className={header.header}>
@@ -12,8 +12,8 @@ const Header = (props) => {
             <Logo />
           </div>
           <div className={header.icon}>
-            <a href="/movie">
-              <Icon getMovie={props.getMovie}/>
+            <a href="/movie" >
+              <Icon />
             </a>
           </div>
         </div>

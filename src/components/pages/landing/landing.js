@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './header/header';
 
-const Landing = (props) => {
-  return <Header click={props.getMovie}/>;
+const Landing = () => {
+  return <Header />;
 };
 
 export default Landing;
