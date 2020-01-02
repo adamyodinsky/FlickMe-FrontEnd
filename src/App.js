@@ -12,15 +12,21 @@ class App extends React.Component {
 
   state = {
     movie: 'init',
-    quote: ''
+    quote: {
+      quote: '',
+      author: ''
+    }
   };
 
   getQuote = async () => {
     const url = 'https://quotes.rest/qod';
     try {
       const response = await axios.get(url);
-      console.log(response.data);
-      this.setState({quote: response.data.contents.quotes[0].quote});
+      this.setState({
+        quote: {
+          quote: response.data.contents.quotes[0].quote,
+          author: response.data.contents.quotes[0].author
+        }});
     } catch (e) {
       console.log("ERROR, can't get quote!");
     }
