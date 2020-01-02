@@ -1,10 +1,10 @@
 import React from 'react';
 import movieTitle from './movieTitle.module.css'
 
-const MovieTitle = () => {
+const MovieTitle = (props) => {
   return (
       <div className={movieTitle.movie_title + ' ' + movieTitle.shadow}>
-        <h1>The Movie Logo 2019</h1>
+        <h1>{props.fullName}</h1>
       </div>
   )
 };

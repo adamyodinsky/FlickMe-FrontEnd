@@ -4,7 +4,7 @@ import Share from '../../../../assets/share.svg';
 import Like from '../../../../assets/like.svg';
 import Flick from '../../../../assets/icon.svg';
 
-const BtnBox = ()=> {
+const BtnBox = (props)=> {
   return (
       <div className={btnBox.btn_box}>
         <div className={btnBox.btn}>
@@ -20,6 +20,7 @@ const BtnBox = ()=> {
           <a href="#2">
             <img
                 src={Flick}
+                onClick={props.getMovie}
                 className={btnBox.btn__svg + ' ' + btnBox.btn__flick + ' ' + btnBox.btn__shadow}
                 alt="flick-me"
             />
