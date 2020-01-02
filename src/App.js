@@ -12,9 +12,19 @@ class App extends React.Component {
 
   state = {
     movie: 'init',
-    firstTimer: true
+    quote: ''
   };
 
+  getQuote = async () => {
+    const url = 'https://quotes.rest/qod';
+    try {
+      const response = await axios.get(url);
+      console.log(response.data);
+      this.setState({quote: response.data.contents.quotes[0].quote});
+    } catch (e) {
+      console.log("ERROR, can't get quote!");
+    }
+  };
 
   getMovie = async () => {
     const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?from_year=1999&to_year=2019&from_quality=1&to_quality=100`;
@@ -30,6 +40,7 @@ class App extends React.Component {
 
   componentDidMount() {
       this.getMovie();
+      this.getQuote();
   }
 
 
@@ -42,7 +53,8 @@ class App extends React.Component {
               <Route exact path="/" component={Landing} />
               <Route exact path="/movie" render={(props) => (<Movie {...props} getMovie={this.getMovie} movie={this.state.movie} />)
               }/>
-              <Route component={NoMatch} />
+              <Route render={(props) => (<NoMatch {...props} quote={this.state.quote} />)
+              }/>
             </Switch>
           </Router>
         </div>
