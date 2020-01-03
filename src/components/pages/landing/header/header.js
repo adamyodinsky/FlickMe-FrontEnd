@@ -12,7 +12,7 @@ const Header = () => {
             <Logo />
           </div>
           <div className={header.icon}>
-            <a href="/movie">
+            <a href="/movie" >
               <Icon />
             </a>
           </div>
