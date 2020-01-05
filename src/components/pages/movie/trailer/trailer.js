@@ -1,5 +1,5 @@
 import React from "react";
-import trailer from './trailer.module.css';
+import trailer from './trailer.module.scss';
 
 const Trailer = (props) => {
 

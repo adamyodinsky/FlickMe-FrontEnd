@@ -1,5 +1,5 @@
 import React from "react";
-import header from './header.module.css';
+import header from './header.module.scss';
 import Logo from '../logo/logo';
 import Icon from '../icon/icon';
 

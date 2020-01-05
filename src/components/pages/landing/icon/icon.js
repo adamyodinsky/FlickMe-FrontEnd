@@ -1,5 +1,5 @@
 import React from "react";
-import icon from './icon.module.css'
+import icon from './icon.module.scss'
 
 const Icon = () => {
   return (
