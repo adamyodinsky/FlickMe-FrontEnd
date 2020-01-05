@@ -1,9 +1,10 @@
 .noMatch {
     text-align: center;
     font-size: 5rem;
+    margin: 2rem;
 }
 
-.text {
+.noMatch p {
     font-size: 3rem;
     margin: 10rem 20rem;
 }
