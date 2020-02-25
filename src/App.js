@@ -7,63 +7,62 @@ import NoMatch from './components/pages/noMatch/NoMatch';
 import configs from './config/config';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
+import { useLocalStore } from 'mobx-react';
 
-class App extends React.Component {
+const StoreContext = React.createContext();
 
-  state = {
+const StoreProvider = ({children}) => {
+  const store = useLocalStore(()=> ({
     movie: 'init',
     quote: {
       quote: '',
       author: ''
-    }
-  };
-
-  getQuote = async () => {
-    const url = 'https://quotes.rest/qod';
-    try {
-      const response = await axios.get(url);
-      this.setState({
-        quote: {
+    },
+    getMovie: async() => {
+      const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?from_year=1999&to_year=2019&from_quality=1&to_quality=100`;
+      try {
+        const response = await axios.get(url);
+        console.log(response.data);
+        store.movie = response.data;
+      } catch (e) {
+        console.log('ERROR: could not get movie object');
+      }
+    },
+    getQuote: async () => {
+      const url = 'https://quotes.rest/qod';
+      try {
+        const response = await axios.get(url);
+        store.quote = {
           quote: response.data.contents.quotes[0].quote,
           author: response.data.contents.quotes[0].author
-        }});
-    } catch (e) {
-      console.log("ERROR, can't get quote!");
+        }
+      } catch (e) {
+        console.log("ERROR, can't get quote!");
+      }
     }
-  };
+  }));
 
-  getMovie = async () => {
-    const url =  `http://${configs.backEndHost}:${configs.backEndPort}/${configs.backEndApi}/movie?from_year=1999&to_year=2019&from_quality=1&to_quality=100`;
-    try {
-      const response = await axios.get(url);
-      this.setState({
-        movie :response.data,
-      });
-    } catch (e) {
-      console.log('ERROR: could not get object');
-    }
-  };
+  return (
+      <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+  )
+};
 
-  componentDidMount() {
-      this.getMovie();
-      this.getQuote();
-  }
-
+class App extends React.Component {
 
   render() {
     return (
+        <StoreProvider>
         <div>
           <Background/>
           <Router>
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route exact path="/movie" render={(props) => (<Movie {...props} getMovie={this.getMovie} movie={this.state.movie} />)
-              }/>
-              <Route render={(props) => (<NoMatch {...props} quote={this.state.quote} />)
-              }/>
+              <Route exact path="/movie" name="Movie" component={Movie} />
+              <Route name="404 NOT FOUND" component={NoMatch} />
             </Switch>
           </Router>
         </div>
+        </StoreProvider>
     )
   }
 }

@@ -6,7 +6,7 @@ import MovieTitle from './movieTitle/movieTitle';
 import BtnBox from './btnBox/btnBox';
 
 const Movie = (props) => {
-
+  const store = React.useContext(StoreContext);
 
   return(
         <div className={movie.main}>
